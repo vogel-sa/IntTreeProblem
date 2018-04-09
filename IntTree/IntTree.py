@@ -1,12 +1,12 @@
 from math import floor
 from sys import argv, stderr, stdout
 
-if len(argv) <= 1 or len(argv) > 2:
-    print >> stderr, "Incorrect number of arguments"
-    exit(-1)
-elif not argv[1].isdigit() and int(argv[0]) <= 0:
-    print >> stderr, "Argument is not a valid tree depth"
-    exit(-1)
+# if len(argv) <= 1 or len(argv) > 2:
+#     print >> stderr, "Incorrect number of arguments"
+#     exit(-1)
+# elif not argv[1].isdigit() and int(argv[0]) <= 0:
+#     print >> stderr, "Argument is not a valid tree depth"
+#     exit(-1)
 
 # Return a list of the correct size for a binary tree of the given depth
 def buildBinTree(depth):
@@ -46,7 +46,7 @@ def getRightNeighbor(node, depth):
     if getFirstIndexAtDepth(depth) > node or getLastIndexAtDepth(depth) <= node:
         return -1
     else:
-        return node - 1
+        return node + 1
 
 depth = int(argv[1])
 tree = buildBinTree(depth)
